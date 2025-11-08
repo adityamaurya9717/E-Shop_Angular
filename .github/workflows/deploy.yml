@@ -8,6 +8,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  INPUT_PATH: dist/test-angular-app
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
