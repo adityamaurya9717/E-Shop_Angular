@@ -1,20 +1,19 @@
 on:
   push:
     branches:
-      - "master" # change to the branch you wish to deploy from
+      - "master"
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-env:
-  INPUT_PATH: dist/test-angular-app/browser
-
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-angular-to-github-pages@v1.0.0
+      - uses: actions/checkout@v3
+
+      - uses: bitovi/github-actions-angular-to-github-pages@v1.0.0
+        with:
+          input_path: dist/test-angular-app/browser
