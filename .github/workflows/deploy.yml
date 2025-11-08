@@ -16,4 +16,5 @@ jobs:
 
       - uses: bitovi/github-actions-angular-to-github-pages@v1.0.0
         with:
-          input_path: dist/test-angular-app/browser
+          input_path: dist/test-angular-app
+          spa: true  # recommended for Angular routing
