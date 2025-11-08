@@ -9,7 +9,7 @@ permissions:
   id-token: write
 
 env:
-  INPUT_PATH: dist/test-angular-app
+  INPUT_PATH: dist/test-angular-app/browser
 
 
 jobs:
