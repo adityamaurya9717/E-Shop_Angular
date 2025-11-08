@@ -1,0 +1,21 @@
+<div class="cart_popup_container" >
+
+    <button (click)="onClosePopup()" class="close_btn">X</button>
+    @if (currentProduct!=null) {
+    <div class="product-detail">
+        <img [src]="currentProduct.image" alt="{{currentProduct.name}}">
+        <h2>{{ currentProduct.name }}</h2>
+        <p>{{ currentProduct.totalPrice | currency }}</p>
+        <p>{{ currentProduct.description }}</p>
+        <p>Quantity: {{ currentProduct.quantity }}</p>
+        <div style="display: flex;flex-direction: row;gap: 10px;">
+            <button (click)="handleQuantity('plus')">+</button>
+            <button (click)="handleQuantity('minus')">-</button>
+
+
+        </div>
+
+
+    </div>
+    }
+</div>

@@ -1,0 +1,59 @@
+/* Basic grid for product listing - aligned with show-product-layout styles */
+.product-listing {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.product-listing app-product {
+	display: block;
+}
+
+/* PDP styles */
+.pdp-container{
+	display: flex;
+	gap: 1.5rem;
+	padding: 1rem;
+}
+
+.left-col{
+	flex: 1 1 45%;
+}
+
+.right-col{
+	flex: 1 1 55%;
+}
+
+.image-gallery{display:flex;gap:1rem}
+.thumbnails{display:flex;flex-direction:column;gap:0.5rem}
+.thumbnails .thumb{width:64px;height:64px;object-fit:cover;cursor:pointer;border:1px solid #ddd;padding:2px}
+.thumbnails .thumb.active{outline:2px solid #f0c14b}
+.main-image img{width:100%;max-width:560px;object-fit:contain}
+
+.title{font-size:1.4rem;margin:0 0 0.5rem}
+.rating-price{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+.price{font-size:1.25rem;color:#b12704}
+.buy-actions{display:flex;gap:0.5rem;margin:1rem 0}
+.buy-actions .buy-now{background:#ffa41c;border:none;padding:0.8rem 1.2rem}
+.buy-actions .add-cart{background:#ffd; border:1px solid #c0c0c0;padding:0.6rem 1rem}
+
+.highlights ul{margin:0.5rem 0 1rem 1rem}
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table td{padding:6px 8px;border-top:1px solid #eee}
+.spec-key{width:40%;font-weight:600;color:#333}
+
+.related-products{padding:1rem}
+.related-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.75rem}
+
+@media(max-width:800px){
+	.pdp-container{flex-direction:column}
+	.thumbnails{flex-direction:row}
+}
+
+/* small responsive tweaks */
+@media (max-width: 600px) {
+	.product-listing {
+		grid-template-columns: 1fr;
+	}
+}

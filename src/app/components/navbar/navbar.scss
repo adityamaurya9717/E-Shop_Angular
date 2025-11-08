@@ -1,0 +1,124 @@
+$primary-color: #007bff;
+$bg-color: #fff;
+$text-color: #333;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 10px;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: $bg-color;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+
+  .navbar-left {
+    .brand {
+      font-size: 28px;
+      font-weight: bold;
+      color: $primary-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .navbar-center {
+    display: flex;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+
+    input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      font-size: 14px;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    .search-btn {
+      padding: 10px 15px;
+      border: none;
+      background-color: $primary-color;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .navbar-right {
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-left: 20px;
+
+        a {
+          text-decoration: none;
+          color: $text-color;
+          font-weight: 500;
+          transition: 0.3s ease;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+
+        &.cart {
+          position: relative;
+
+          .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+          }
+
+          .cart-icon {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .navbar-center {
+      margin: 10px 0;
+    }
+
+    .navbar-right ul {
+      flex-direction: column;
+      align-items: flex-start;
+
+      li {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

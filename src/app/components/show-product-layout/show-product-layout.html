@@ -1,0 +1,16 @@
+
+<div (scroll)="onScroll($event)" class="product-listing">
+  
+   
+  @for (item of productDetail; track $index) {
+    <app-product  (addToCartEvent)="handleAddToCartEvent($event)"  [productDetail] = "item"></app-product>
+  }
+   
+ 
+  @if(showCartPopup){
+  <app-cart-page (closeCartEvent) = "closeCartPopUp()"  [currentProduct]="currentProduct"></app-cart-page>
+  }
+  
+</div>
+
+

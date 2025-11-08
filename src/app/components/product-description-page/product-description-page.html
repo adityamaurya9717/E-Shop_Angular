@@ -1,0 +1,73 @@
+<div class="pdp-container">
+	<div class="left-col">
+		<div class="image-gallery">
+			<div class="thumbnails">
+				@if(currentProduct && currentProduct.images) {
+							@for(img of currentProduct.images; track $index) {
+									<img class="thumb" src="{{img}}" (click)="selectMainImage(img)" [class.active]="getImageUrl(img)===mainImage" />
+								}
+				} @else {
+					@if(currentProduct) {
+						<img class="thumb" [src]="currentProduct.image" (click)="selectMainImage(currentProduct.image)" />
+					}
+				}
+			</div>
+			<div class="main-image">
+			<img *ngIf="mainImage" [src]="mainImage" alt="{{currentProduct?.name}}">
+			</div>
+		</div>
+	</div>
+
+	<div class="right-col">
+		<h1 class="title">{{ currentProduct?.name }}</h1>
+		<div class="rating-price">
+			<div class="rating">⭐ {{ currentProduct?.rating || '4.4' }} • {{ currentProduct?.reviews || '1,234' }} ratings</div>
+			<div class="price">{{ currentProduct?.price | currency }}</div>
+		</div>
+
+		<div class="buy-actions">
+			<button class="buy-now">Buy Now</button>
+			<button class="add-cart" (click)="handleAddToCartEvent(currentProduct)">Add to Cart</button>
+		</div>
+
+		<div class="highlights">
+			<h3>Highlights</h3>
+			<ul>
+				@if(currentProduct && currentProduct.highlights){
+					@for(point of currentProduct.highlights; track $index){
+						<li>{{point}}</li>
+					}
+				} @else {
+					<li>Fast performance</li>
+					<li>Great camera</li>
+				}
+			</ul>
+		</div>
+
+		<div class="specs">
+			<h3>Product details</h3>
+			<p>{{ currentProduct?.description }}</p>
+					@if(specEntries && specEntries.length){
+						<table class="spec-table">
+							@for(entry of specEntries; track $index){
+								<tr><td class="spec-key">{{entry.k}}</td><td class="spec-val">{{entry.v}}</td></tr>
+							}
+						</table>
+					}
+		</div>
+	</div>
+
+</div>
+
+<div class="related-products">
+	<h3>Customers also viewed</h3>
+	<div class="related-list">
+		@for (item of productList; track $index) {
+			<app-product (addToCartEvent)="handleAddToCartEvent($event)" [productDetail]="item"></app-product>
+		}
+	</div>
+</div>
+
+@if(showCartPopup){
+	<app-cart-page (closeCartEvent)="closeCartPopUp()" [currentProduct]="currentProduct"></app-cart-page>
+}

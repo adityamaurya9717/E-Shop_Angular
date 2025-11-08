@@ -1,0 +1,28 @@
+<div>
+  <form class="login_form" [formGroup]="loginForm">
+
+    <div>
+        <label>Enter Email</label>
+        <input type="text" formControlName="email" >
+    </div>
+
+     <div>
+        <label>Enter password</label>
+        <input type="password" formControlName="password" >
+    </div>
+
+    <div>
+        <button (click)="login()"> Login</button>
+         <button (click)="reset()"> Reset</button>
+
+    </div>
+    <div>
+      <h3 style="text-align: center;"> Or </h3>
+    </div>
+    <div>
+      <div id="google-login"></div>
+    </div>
+  </form>
+
+
+</div>

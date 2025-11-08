@@ -1,0 +1,104 @@
+$form-bg: #fff;
+$form-width: 800px;
+$input-padding: 16px;
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: 'Arial', sans-serif;
+
+  form {
+    background-color: $form-bg;
+    padding: 50px 60px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    width: $form-width;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+     // Form Heading
+    .form-heading {
+      grid-column: 1 / -1; // span both columns
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #007bff;
+    }
+
+    .form-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: $input-padding;
+        font-size: 16px;
+        border: 1.5px solid #ccc;
+        border-radius: 7px;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #007bff;
+        }
+
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+          top: -10px;
+          left: 10px;
+          font-size: 12px;
+          color: #007bff;
+          background-color: $form-bg;
+          padding: 0 5px;
+        }
+      }
+
+      label {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        font-size: 16px;
+        color: #999;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+
+      button {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        border-radius: 7px;
+        background: linear-gradient(90deg, #007bff, #00a1ff);
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: linear-gradient(90deg, #0056b3, #007bff);
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      width: 90%;
+      padding: 40px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding: 30px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <!-- Brand -->
+  <div class="navbar-left">
+    <a routerLink="/" class="brand">E-Shop</a>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="navbar-center">
+    <input type="text" placeholder="Search for products..." />
+    <button class="search-btn">Search</button>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="navbar-right">
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/homepage/shop">Shop</a></li>
+      <li><a routerLink="/categories">Categories</a></li>
+      <li><a routerLink="/deals">Deals</a></li>
+      <li><a routerLink="/login">Login</a></li>
+      <li class="cart">
+        <a routerLink="/homepage/cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count">{{ cartCount }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+

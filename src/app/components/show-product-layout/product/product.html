@@ -1,0 +1,8 @@
+<div class="product-detail"> 
+    <img  (click)="goToPdpPage(product.productId)" [src]="product.image" alt="{{product.name}}"> 
+    <h2>{{ product.name }}</h2>
+    
+    <p>{{ product.price | currency }}</p> 
+    <p>{{ product.description }}</p> 
+    <button (click)="addToCart(product)">Add to Cart</button> 
+</div>
