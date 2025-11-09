@@ -13,13 +13,15 @@
   <!-- Navigation Links -->
   <div class="navbar-right">
     <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/homepage/shop">Shop</a></li>
-      <li><a routerLink="/categories">Categories</a></li>
-      <li><a routerLink="/deals">Deals</a></li>
-      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+      <li >
+        <a routerLink="/homepage/shop" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >Shop</a>
+      </li>
+      <li><a routerLink="/categories" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Categories</a></li>
+      <li><a routerLink="/deals" routerLinkActive="active">Deals</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
       <li class="cart">
-        <a routerLink="/homepage/cart">
+        <a routerLink="/homepage/cart" routerLinkActive="active">
           <span class="cart-icon">🛒</span>
           <span class="cart-count">{{ cartCount }}</span>
         </a>

@@ -24,6 +24,11 @@
 			<div class="rating">⭐ {{ currentProduct?.rating || '4.4' }} • {{ currentProduct?.reviews || '1,234' }} ratings</div>
 			<div class="price">{{ currentProduct?.price | currency }}</div>
 		</div>
+		<div class="price">
+			<p class="cost-price">Cost Price: <span>{{ currentProduct?.productPrice?.IN?.costPrice | currency }}</span></p>
+			<p class="selling-price">Selling Price: <span>{{ currentProduct?.productPrice?.IN?.sellingPrice | currency }}</span></p>
+			<p class="discount">You Save: <span>{{ calculateDiscount(currentProduct?.productPrice?.IN?.costPrice, currentProduct?.productPrice?.IN?.sellingPrice) }}%</span></p>
+		</div>
 
 		<div class="buy-actions">
 			<button class="buy-now">Buy Now</button>

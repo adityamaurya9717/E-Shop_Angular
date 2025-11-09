@@ -2,6 +2,12 @@ $primary-color: #007bff;
 $bg-color: #fff;
 $text-color: #333;
 
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;

@@ -13,6 +13,16 @@ import {productById} from './SamplePdpProduct'
 })
 export class ProductDescriptionPage implements OnInit, OnDestroy {
 
+
+calculateDiscount(arg0: any,arg1: any) {
+    if(arg0 && arg1){
+      const discount = ((arg0 - arg1) / arg0) * 100;
+      return discount.toFixed(2);
+    }
+    return '0';
+   
+}
+
   productList: any[] = [];
   currentProduct: any = null;
   showCartPopup: boolean = false;
@@ -32,7 +42,7 @@ export class ProductDescriptionPage implements OnInit, OnDestroy {
     this.route.queryParams.subscribe(params => {
       const productId = params['productId'];
       if (productId) {
-        this.fetchProductDetail(productId);
+         this.fetchProductDetail(productId);
       } else {
         // no productId -> show sample product
         this.currentProduct = productById;
@@ -57,7 +67,7 @@ export class ProductDescriptionPage implements OnInit, OnDestroy {
     const max = document.documentElement.scrollHeight;
     if (pos >= max) {
       // reached bottom -> load more
-      this.fetchProducts();
+      //this.fetchProducts();
     }
   }
 
@@ -141,7 +151,7 @@ export class ProductDescriptionPage implements OnInit, OnDestroy {
         this.mainImage = found.image;
         this.specEntries = this.buildSpecEntries(this.currentProduct);
       } else {
-        this.currentProduct = productById;
+        this.currentProduct = productById[0];
         console.log("Using sample productById:", this.currentProduct);
         this.mainImage = this.currentProduct.image;
         this.specEntries = this.buildSpecEntries(this.currentProduct);

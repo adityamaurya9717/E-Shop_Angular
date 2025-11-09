@@ -4,9 +4,9 @@ export const productById:Array<any> = [{
   "product_description": "Noise-cancelling over-ear headphones with Bluetooth connectivity",
   "category": "Electronics",
   "image":"https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
-  "images":["https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"],
+  "images":["https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp","https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"],
    "specs": { 'Model': 'Sample B', 'Storage': '64GB', 'Color': 'Blue' },
-  "product_price_by_country": {
+  "productPrice": {
     "IN": {
       "costPrice": 2500,
       "sellingPrice": 2999,
